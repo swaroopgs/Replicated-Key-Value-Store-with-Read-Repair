@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package keyValueStore.keyValue;
+
+message KeyValuePair{
+  uint32 key = 1;
+  string value = 2;
+  uint64 time = 3;
+}
+
+message Get{
+  uint32 key=1;
+  uint32 consistency = 2;
+  uint32 id = 3;
+}
+
+message Put{
+  KeyValuePair keyval = 1;
+  uint32 consistency = 2;
+  uint32 id = 3;
+}
+
+message WriteResponse{
+  uint32 key = 1;
+  bool writeReply = 2;
+  uint32 id = 3;
+}
+
+message ReadResponse {
+  KeyValuePair keyval = 1;
+  uint32 id = 2;
+  bool readStatus = 3;
+}
+
+message ReadRepair{
+  KeyValuePair keyval = 1;
+  uint32 id = 2;
+}
+
+
+message Exception{
+  uint32 key = 1;
+  string method = 2;
+  string exceptionMessage = 3;
+}
+
+message KeyValueMessage {
+  oneof keyvalue_message {
+    Get get_key = 1;
+    Put put_key = 2;
+    ReadRepair read_repair = 3;
+    WriteResponse write_response = 4;
+    ReadResponse read_response = 5;
+    Exception exception = 6;
+  }
+  uint32 connectionClient = 8;
+  string serverName = 9;
+}
