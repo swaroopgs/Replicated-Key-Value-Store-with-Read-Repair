@@ -24,14 +24,14 @@ To run server use the command
 ```
 ./server.sh <servername><portnumber><serverConfig file path><readrepair>
 
-$ ./server.sh server3 9092 /home/darshan/Documents/Distributive_System/Assignment4/commit/cs457-557-spring20-pa4-ddoddag1-sgowdra1/keyValueStore/serversConfig.txt 1
+$ ./server.sh server3 9092 /home/user/Documents/Distributive_System/Assignment4/commit/cs457-557-spring20-pa4-ddoddag1-sgowdra1/keyValueStore/serversConfig.txt 1
 
 ```
 To run client use the command
 ```
 ./client.sh <cordinatorName> <serverConfig file path>```
 
-$ ./client.sh server1 /home/darshan/Documents/Distributive_System/Assignment4/commit/cs457-557-spring20-pa4-ddoddag1-sgowdra1/keyValueStore/serversConfig.txt 
+$ ./client.sh server1 /home/user/Documents/Distributive_System/Assignment4/commit/cs457-557-spring20-pa4-ddoddag1-sgowdra1/keyValueStore/serversConfig.txt 
 
 going to set coordinator server as server1
 Enter key value like put-5-25 or get-5
